@@ -169,11 +169,107 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2023-08-04T14:26:28.174Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "igorkonov1993@gmail.com - Игорь Конов: 856040824",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0427\\u0430\\u0442 ID \\u0442\\u0435\\u043b\\u0435\\u0433\\u0440\\u0430\\u043c\\u043c\"]}}]"
+  }
+},
+{
   "model": "sessions.session",
   "pk": "npqiwwwe0ymvqeq7t2vgti7f9xjwlc43",
   "fields": {
     "session_data": ".eJxVjMsOwiAQRf-FtSFAebp07zeQmQGkaiAp7cr479qkC93ec859sQjbWuM28hLnxM5MstPvhkCP3HaQ7tBunVNv6zIj3xV-0MGvPeXn5XD_DiqM-q2F1ei8KapoTyorCRORAYsukLTojbZauYBFee2C98JYCmEySUgUZZLs_QHHnjbE:1qQrC8:Zw_aKGcpIo5y9Kel0dYcCnkvyL0pw1r0qbQ_B0u9L0I",
     "expire_date": "2023-08-15T15:21:56.738Z"
+  }
+},
+{
+  "model": "django_celery_beat.intervalschedule",
+  "pk": 1,
+  "fields": {
+    "every": 10,
+    "period": "seconds"
+  }
+},
+{
+  "model": "django_celery_beat.crontabschedule",
+  "pk": 1,
+  "fields": {
+    "minute": "0",
+    "hour": "4",
+    "day_of_week": "*",
+    "day_of_month": "*",
+    "month_of_year": "*",
+    "timezone": "Europe/Moscow"
+  }
+},
+{
+  "model": "django_celery_beat.periodictasks",
+  "pk": 1,
+  "fields": {
+    "last_update": "2023-08-04T13:59:38.069Z"
+  }
+},
+{
+  "model": "django_celery_beat.periodictask",
+  "pk": 1,
+  "fields": {
+    "name": "celery.backend_cleanup",
+    "task": "celery.backend_cleanup",
+    "interval": null,
+    "crontab": 1,
+    "solar": null,
+    "clocked": null,
+    "args": "[]",
+    "kwargs": "{}",
+    "queue": null,
+    "exchange": null,
+    "routing_key": null,
+    "headers": "{}",
+    "priority": null,
+    "expires": null,
+    "expire_seconds": 43200,
+    "one_off": false,
+    "start_time": null,
+    "enabled": true,
+    "last_run_at": null,
+    "total_run_count": 0,
+    "date_changed": "2023-08-03T14:29:55.967Z",
+    "description": ""
+  }
+},
+{
+  "model": "django_celery_beat.periodictask",
+  "pk": 2,
+  "fields": {
+    "name": "Send habit reminders",
+    "task": "habits_app.tasks.send_habit_reminders",
+    "interval": 1,
+    "crontab": null,
+    "solar": null,
+    "clocked": null,
+    "args": "[]",
+    "kwargs": "{}",
+    "queue": null,
+    "exchange": null,
+    "routing_key": null,
+    "headers": "{}",
+    "priority": null,
+    "expires": "2023-08-04T14:00:08.049Z",
+    "expire_seconds": null,
+    "one_off": false,
+    "start_time": null,
+    "enabled": true,
+    "last_run_at": null,
+    "total_run_count": 0,
+    "date_changed": "2023-08-04T13:59:38.064Z",
+    "description": ""
   }
 },
 {
@@ -198,8 +294,8 @@
   "fields": {
     "user": 2,
     "place": "дома",
-    "time": "19:12:26",
-    "action": "пить водичку",
+    "time": "17:39:26",
+    "action": "пить водичку!",
     "is_pleasurable": false,
     "linked_habit": null,
     "frequency": 7,
@@ -289,6 +385,118 @@
   }
 },
 {
+  "model": "habits_app.habit",
+  "pk": 8,
+  "fields": {
+    "user": 2,
+    "place": "везде",
+    "time": "17:43:00",
+    "action": "разминка",
+    "is_pleasurable": false,
+    "linked_habit": null,
+    "frequency": 1,
+    "reward": null,
+    "execution_time": "00:02:00",
+    "is_public": true
+  }
+},
+{
+  "model": "habits_app.habit",
+  "pk": 10,
+  "fields": {
+    "user": 2,
+    "place": "везде",
+    "time": "18:20:00",
+    "action": "есть",
+    "is_pleasurable": true,
+    "linked_habit": null,
+    "frequency": 1,
+    "reward": null,
+    "execution_time": "00:02:00",
+    "is_public": true
+  }
+},
+{
+  "model": "habits_app.habit",
+  "pk": 11,
+  "fields": {
+    "user": 2,
+    "place": "везде",
+    "time": "18:21:00",
+    "action": "есть",
+    "is_pleasurable": true,
+    "linked_habit": null,
+    "frequency": 1,
+    "reward": null,
+    "execution_time": "00:02:00",
+    "is_public": true
+  }
+},
+{
+  "model": "habits_app.habit",
+  "pk": 12,
+  "fields": {
+    "user": 2,
+    "place": "везде",
+    "time": "18:22:00",
+    "action": "есть",
+    "is_pleasurable": true,
+    "linked_habit": null,
+    "frequency": 1,
+    "reward": null,
+    "execution_time": "00:02:00",
+    "is_public": true
+  }
+},
+{
+  "model": "habits_app.habit",
+  "pk": 13,
+  "fields": {
+    "user": 2,
+    "place": "везде",
+    "time": "18:23:00",
+    "action": "есть",
+    "is_pleasurable": true,
+    "linked_habit": null,
+    "frequency": 1,
+    "reward": null,
+    "execution_time": "00:02:00",
+    "is_public": true
+  }
+},
+{
+  "model": "habits_app.habit",
+  "pk": 14,
+  "fields": {
+    "user": 2,
+    "place": "везде",
+    "time": "18:26:00",
+    "action": "есть",
+    "is_pleasurable": true,
+    "linked_habit": null,
+    "frequency": 1,
+    "reward": null,
+    "execution_time": "00:02:00",
+    "is_public": true
+  }
+},
+{
+  "model": "habits_app.habit",
+  "pk": 15,
+  "fields": {
+    "user": 2,
+    "place": "везде",
+    "time": "18:35:00",
+    "action": "есть",
+    "is_pleasurable": true,
+    "linked_habit": null,
+    "frequency": 1,
+    "reward": null,
+    "execution_time": "00:02:00",
+    "is_public": true
+  }
+},
+{
   "model": "users.user",
   "pk": 1,
   "fields": {
@@ -322,7 +530,7 @@
     "date_joined": "2023-08-01T15:50:27.315Z",
     "email": "igorkonov1993@gmail.com",
     "avatar": "",
-    "chat_id": null,
+    "chat_id": "856040824",
     "login_tg": "Игорь Конов",
     "groups": [],
     "user_permissions": []

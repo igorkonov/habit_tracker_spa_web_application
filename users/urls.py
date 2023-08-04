@@ -8,10 +8,10 @@ app_name = UsersConfig.name
 
 urlpatterns = [
 
-    path('users/', UserListAPIView.as_view(), name='user-list'),
-    path('users/create/', UserCreateAPIView.as_view(), name='user-create'),
-    path('users/<int:pk>/', UserRetrieveUpdateAPIView.as_view(), name='user-detail'),
-    path('users/<int:pk>/delete/', UserDestroyAPIView.as_view(), name='user-delete'),
+    path('', UserListAPIView.as_view(), name='user-list'),
+    path('user/create/', UserCreateAPIView.as_view(), name='user-create'),
+    path('user/<int:pk>/', UserRetrieveUpdateAPIView.as_view(), name='user-detail'),
+    path('user/<int:pk>/delete/', UserDestroyAPIView.as_view(), name='user-delete'),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh')
 

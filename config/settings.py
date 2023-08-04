@@ -16,6 +16,7 @@ from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 dot_env = os.path.join(BASE_DIR, '.env')
 load_dotenv(dotenv_path=dot_env)
 
@@ -28,7 +29,7 @@ SECRET_KEY = 'django-insecure-hvw69_c44!x2eqknqq7urjp!ddwho%mhcsb+#5uih766riae1l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -41,11 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'drf_yasg',
     'django_filters',
-    'habits_app',
-    'users',
     'rest_framework',
     'corsheaders',
     'rest_framework_simplejwt',
+    'django_celery_beat',
+    'habits_app',
+    'users'
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -168,3 +170,10 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=2),
 }
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_TIMEZONE = 'Europe/Moscow'
+
+TELEGRAM_BOT_API = os.getenv('TELEGRAM_BOT_API')

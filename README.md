@@ -10,6 +10,7 @@ Framework.
 
 - Python, Django, Django REST Framework
 - Django ORM
+- Docker
 - PostgreSQL
 - Celery, Redis
 - PyTelegramBotAPI
@@ -126,3 +127,13 @@ coverage report
 ```bash
 http://localhost:8000 /redoc/ или /swagger/
 ```
+## Docker
+- для начала создайте отдельный файл `.env.docker` и пропишите там свои настройки. Смотрите шаблон `.env.sample`:
+
+### Сборка образа и запуск в фоне после успешной сборки
+```
+docker-compose up -d —build
+```
+- для остановки
+```
+docker-compose down
